@@ -1,0 +1,65 @@
+<html>
+<head>
+	<title>Image Preloader using ImagesLoaded</title>
+	
+	<link rel="stylesheet" href="css/main.css" />
+	<script src="js/lib/jquery-2.1.1.min.js"></script>
+	<script src="js/lib/imagesloaded.pkgd.min.js"></script>
+	<script src="js/preload.js"></script>
+	<script>
+	
+		$(function(){
+		
+			function reveal(){
+				console.log('\nreveal called');
+				$(".slides").css({"display":"block", "opacity":1});
+				
+				var self = this;	
+				$("#loader").css({"width" : 0 });
+				
+				var images = $('.slides2 section img');
+				var loader = new Preloader("#loader",{images:images, waitForAnimation:true, callback:function(){
+										$(".slides2").css({"display":"block", "opacity":1});								
+									}
+								});
+				loader.start();
+			}
+			
+			var images = $('.slides section img');
+			
+			var loadMe = new Preloader("#loader",{images:images, callback:reveal, waitForAnimation:true, autoHide:false});
+			loadMe.start();
+		});
+	</script>
+</head>
+
+<body>
+    
+	<div id="loader"></div>
+	<div id="overlay"></div>
+	<div id="contentWrapper">
+		<div class="slides">
+				<section>
+						<section>
+							<img src="http://i.imgur.com/xrQHn.jpg">
+						</section>
+						<section>
+							<img src="http://i.imgur.com/b3fBJ.jpg" />
+							<img src="http://i.imgur.com/xmSh2.jpg" />
+							<img src="http://i.imgur.com/iIpJm.jpg" />
+							<img src="http://i.imgur.com/cvZZl10.gif" />
+						</section>
+					
+				</section>
+		</div>
+		<div class="slides2">
+				<section>
+				    <img src="http://i.imgur.com/YbYCPFF.png" />
+					<img src="http://i.imgur.com/6UdOxeB.png" />
+					<img src="http://i.imgur.com/qd8G15D.png" />
+				</section>
+		</div>		
+	</div>
+
+</body>
+</html>

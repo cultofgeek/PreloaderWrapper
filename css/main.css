@@ -1,0 +1,58 @@
+
+html, body {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	min-height: 672px;
+}
+
+body {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	line-height: 1.4;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	letter-spacing: -0.02em;
+	color: #eee;
+}
+
+i, cite, em, var, address, dfn {
+font-style: italic;
+}
+p, pre {
+margin: 1em 0;
+}
+
+#contentWrapper{width:100%;height:100%; margin-top:50px; float:left;}
+
+#loader {
+  display: none;
+  background: #00d8ff;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  height: 2px;
+  -webkit-transition: width 1s;
+  -moz-transition: width 1s;
+  -o-transition: width 1s;
+  transition: width 1s;
+}
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: rgba(255,255,255,0.9);
+}
+.slides, .slides2{
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;  
+}
